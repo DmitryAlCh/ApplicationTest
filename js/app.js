@@ -6,6 +6,7 @@ var getValues = require('./get-values.js')
 var postValues = require('./post-data.js');
 // var enterToken = require('./osmo.js');
 var xml = require('./xml-request.js');
+var requestEmail = require('./request-email.js');
 
 var hiddenToken = '';
 var baseUrl = 'https://zdorov-group.eu/vacancy';
@@ -19,8 +20,8 @@ getPage.getPage(baseUrl)
           console.log(data);
           postValues.postValues(data.uri, data.code, data.cookie).then(
             (token) => {
-              xml.xmlReq(data.uri+'?token='+token).then(
-                (base64email) =>{
+              requestEmail.requestEmail(data.uri+'?token='+token, data.cookie).then(
+                (base64email) => {
 
                 }
               )
