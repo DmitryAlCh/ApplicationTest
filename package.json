@@ -17,7 +17,11 @@
   },
   "homepage": "https://github.com/DmitryAlCh/ApplicationTest#readme",
   "dependencies": {
-    "request": "^2.81.0"
+    "cheerio": "^1.0.0-rc.2",
+    "chrome-launcher": "^0.5.0",
+    "chrome-remote-interface": "^0.24.3",
+    "request": "^2.81.0",
+    "xmlhttprequest": "^1.8.0"
   },
   "devDependencies": {
     "chalk": "^2.1.0"
