@@ -15,7 +15,7 @@ function postValues (uri, code, sessionCookie) {
       if (!error && response.statusCode==200){
         console.log('Received token: ', chalk.yellow(response.body));
         var token = JSON.parse(response.body);
-        // console.log(typeof token, token.token);
+        // console.log(typeof token.token, token.token);
         // resolve(response.body);
         resolve(token.token);
       } else {

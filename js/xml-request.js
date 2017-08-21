@@ -1,6 +1,7 @@
 const chalk = require('chalk');
 var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 
+
 function xmlReq(composedUrl){
   console.log(chalk.green(`Making xmlhttprequest to: ${composedUrl}`));
   return new Promise((resolve, reject) =>{
@@ -23,7 +24,7 @@ function xmlReq(composedUrl){
     xhr.open('GET', composedUrl, false);
     xhr.send(null);
 
-})
+});
 }
 
 module.exports = {

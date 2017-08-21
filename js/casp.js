@@ -9,15 +9,28 @@ const casper = require('casper').create({
     // clientScripts: ['https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js']
 });
 
-function doStuff() {
-    this.echo('Performing actions on each page');
-    this.echo('Making the screenShot');
-    casper.page.render('./playground/page.png');
-    casper.sendKeys('#token', '19df733c059c54dfb0019fa22faa5684');
+
+
+
+function readValue(){
+  return document.querySelector('div p').value;
 }
 casper.start('https://zdorov-group.eu/vacancy', function() {
     this.echo('Page title: ' + this.getTitle());
+    this.echo('current value:', this.fetchText('body'));
 });
-casper.then(doStuff);
-casper.then()
+casper.thenEvaluate(function(){
+  document.querySelector('input[name="submitme"]').setAttribute('value', 'shdsjhbsjhdbd');
+});
+
+
+
+// casper.then( function(){
+//   if (this.exists('#token')){
+//     this.echo('Element exists for the 2 time', 'INFO');
+//     this.echo('text of the fetched element: '+this.fetchText('#token'));
+//   } else{
+//     this.echo('Element does not exist');
+//   }
+// });
 casper.run();

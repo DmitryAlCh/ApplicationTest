@@ -48,7 +48,7 @@ function getValues(page) {
     resolve({
       uri: hiddenUri,
       code: hiddenCode,
-      cookie: cookie
+      cookie: cookie,
     });
   });
 }
