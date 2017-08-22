@@ -4,7 +4,7 @@ const chalk = require('chalk');
 function requestEmail (uri, sessionCookie) {
 // console.log('Provided sessionCookie: ', chalk.green(sessionCookie));
   return new Promise((resolve, reject) => {
-    console.log(chalk.green(`Making POST request to: ${uri}`));
+    console.log(chalk.green(`Making GET request to: ${uri}`));
     request.get({
       url: uri,
       headers: {
