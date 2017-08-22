@@ -1,7 +1,7 @@
 const request = require('request');
 const chalk = require('chalk');
 
-function postValues (uri, code, sessionCookie) {
+function postValues(uri, code, sessionCookie) {
   return new Promise((resolve, reject) => {
     console.log(chalk.green(`Making POST request to: ${uri}`));
     request.post({
@@ -11,8 +11,8 @@ function postValues (uri, code, sessionCookie) {
         session: sessionCookie
       }
     }, (error, response, body) => {
-      console.log('Post request statusCode:' , chalk.yellow(response.statusCode));
-      if (!error && response.statusCode==200){
+      console.log('Post request statusCode:', chalk.yellow(response.statusCode));
+      if (!error && response.statusCode == 200) {
         console.log('Received token: ', chalk.yellow(response.body));
         var token = JSON.parse(response.body);
         // console.log(typeof token.token, token.token);
